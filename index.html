@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevToolLab - Herramientas Gratuitas para Desarrolladores</title>
+  <meta name="description" content="Colección de herramientas gratuitas en línea para desarrolladores: Formateador JSON, Contador de Texto y Conversor de Bases Numéricas.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <h1>🛠️ DevToolLab</h1>
+      <p>Herramientas web gratuitas y rápidas para desarrolladores y estudiantes</p>
+    </div>
+  </header>
+
+  <!-- Espacio para Anuncio Superior (Google AdSense) -->
+  <div class="ad-space">
+    <small>Anuncio AdSense (Header)</small>
+  </div>
+
+  <main class="container main-content">
+
+    <!-- HERRAMIENTA 1: FORMATEADOR DE JSON -->
+    <section class="tool-card">
+      <h2>📋 Formateador y Validador de JSON</h2>
+      <p>Pega tu texto JSON para ordenarlo, minificarlo o detectar errores de sintaxis.</p>
+      
+      <textarea id="json-input" placeholder='Pega tu JSON aquí, ejemplo: {"nombre":"Juan","curso":"Sistemas"}'></textarea>
+
+      <div class="actions">
+        <button id="btn-format" class="btn btn-primary">Formatear JSON</button>
+        <button id="btn-minify" class="btn btn-secondary">Minificar JSON</button>
+        <button id="btn-clear-json" class="btn btn-danger">Limpiar</button>
+      </div>
+
+      <div id="json-status" class="status-msg"></div>
+      
+      <label for="json-output" class="label-muted">Resultado:</label>
+      <textarea id="json-output" readonly placeholder="El JSON formateado aparecerá aquí..."></textarea>
+    </section>
+
+    <!-- Espacio para Anuncio Intermedio (Google AdSense) -->
+    <div class="ad-space">
+      <small>Anuncio AdSense (In-feed)</small>
+    </div>
+
+    <!-- HERRAMIENTA 2: CONTADOR DE TEXTO -->
+    <section class="tool-card">
+      <h2>📝 Contador de Texto, Palabras y Líneas</h2>
+      <p>Escribe o pega cualquier texto para obtener métricas en tiempo real.</p>
+
+      <textarea id="text-input" placeholder="Escribe o pega tu texto aquí..."></textarea>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span id="stat-words">0</span>
+          <small>Palabras</small>
+        </div>
+        <div class="stat-box">
+          <span id="stat-chars">0</span>
+          <small>Caracteres</small>
+        </div>
+        <div class="stat-box">
+          <span id="stat-lines">0</span>
+          <small>Líneas</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERRAMIENTA 3: CONVERSOR DE BASES -->
+    <section class="tool-card">
+      <h2>🔢 Conversor de Bases Numéricas</h2>
+      <p>Ingresa un número en cualquier base para convertirlo automáticamente a las demás.</p>
+
+      <div class="converter-grid">
+        <div class="input-group">
+          <label for="base-dec">Decimal (Base 10):</label>
+          <input type="text" id="base-dec" placeholder="Ej. 255">
+        </div>
+
+        <div class="input-group">
+          <label for="base-bin">Binario (Base 2):</label>
+          <input type="text" id="base-bin" placeholder="Ej. 11111111">
+        </div>
+
+        <div class="input-group">
+          <label for="base-hex">Hexadecimal (Base 16):</label>
+          <input type="text" id="base-hex" placeholder="Ej. FF">
+        </div>
+
+        <div class="input-group">
+          <label for="base-oct">Octal (Base 8):</label>
+          <input type="text" id="base-oct" placeholder="Ej. 377">
+        </div>
+      </div>
+
+      <div id="base-status" class="status-msg"></div>
+      <button id="btn-clear-bases" class="btn btn-secondary">Limpiar Bases</button>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 DevToolLab - Herramientas Web Gratuitas.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
