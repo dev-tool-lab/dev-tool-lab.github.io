@@ -3,109 +3,205 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevToolLab - Herramientas Gratuitas para Desarrolladores</title>
-  <meta name="description" content="Colección de herramientas gratuitas en línea para desarrolladores: Formateador JSON, Contador de Texto y Conversor de Bases Numéricas.">
+  <title>DevToolLab - Suite de Herramientas para Desarrolladores</title>
+  <meta name="description" content="Suite gratuita de utilidades web para desarrolladores: Validador JSON, Contador de Métricas y Conversor de Bases Númericas de alta precisión.">
+  
+  <!-- Fuente Google Inter & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="container">
-      <h1>🛠️ DevToolLab</h1>
-      <p>Herramientas web gratuitas y rápidas para desarrolladores y estudiantes</p>
+  <!-- NAVEGACIÓN SUPERIOR -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        <i class="fa-solid fa-code-compare logo-icon"></i>
+        <span>DevTool<span class="highlight">Lab</span></span>
+      </div>
+      <nav class="nav-links">
+        <a href="#json-tool" class="nav-item active"><i class="fa-solid fa-brackets-curly"></i> JSON</a>
+        <a href="#text-tool" class="nav-item"><i class="fa-solid fa-file-lines"></i> Texto</a>
+        <a href="#base-tool" class="nav-item"><i class="fa-solid fa-calculator"></i> Bases</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Espacio para Anuncio Superior (Google AdSense) -->
-  <div class="ad-space">
-    <small>Anuncio AdSense (Header)</small>
+  <!-- BANNER PRINCIPAL / HERO -->
+  <section class="hero">
+    <div class="container hero-container">
+      <h2>Herramientas de Precisión para Desarrolladores</h2>
+      <p>Procesa, valida y convierte datos de forma instantánea en tu navegador. Sin instalación y 100% privado.</p>
+    </div>
+  </section>
+
+  <!-- ESPACIO ADSENSE SUPERIOR -->
+  <div class="ad-wrapper">
+    <div class="ad-box">
+      <span class="ad-label">Publicidad</span>
+      <!-- Código de Google AdSense aquí -->
+    </div>
   </div>
 
-  <main class="container main-content">
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container main-layout">
 
-    <!-- HERRAMIENTA 1: FORMATEADOR DE JSON -->
-    <section class="tool-card">
-      <h2>📋 Formateador y Validador de JSON</h2>
-      <p>Pega tu texto JSON para ordenarlo, minificarlo o detectar errores de sintaxis.</p>
-      
-      <textarea id="json-input" placeholder='Pega tu JSON aquí, ejemplo: {"nombre":"Juan","curso":"Sistemas"}'></textarea>
-
-      <div class="actions">
-        <button id="btn-format" class="btn btn-primary">Formatear JSON</button>
-        <button id="btn-minify" class="btn btn-secondary">Minificar JSON</button>
-        <button id="btn-clear-json" class="btn btn-danger">Limpiar</button>
+    <!-- HERRAMIENTA 1: JSON -->
+    <article id="json-tool" class="card-tool">
+      <div class="card-header">
+        <div class="card-title">
+          <i class="fa-solid fa-brackets-curly icon-blue"></i>
+          <div>
+            <h3>Formateador & Validador JSON</h3>
+            <p>Valida la sintaxis, embellece la estructura o minifica tus datos JSON.</p>
+          </div>
+        </div>
       </div>
 
-      <div id="json-status" class="status-msg"></div>
-      
-      <label for="json-output" class="label-muted">Resultado:</label>
-      <textarea id="json-output" readonly placeholder="El JSON formateado aparecerá aquí..."></textarea>
-    </section>
+      <div class="editor-container">
+        <div class="editor-box">
+          <label for="json-input"><i class="fa-solid fa-arrow-right-to-bracket"></i> Entrada JSON</label>
+          <textarea id="json-input" placeholder='{\n  "status": "success",\n  "code": 200\n}' spellcheck="false"></textarea>
+        </div>
 
-    <!-- Espacio para Anuncio Intermedio (Google AdSense) -->
-    <div class="ad-space">
-      <small>Anuncio AdSense (In-feed)</small>
+        <div class="editor-box">
+          <label for="json-output"><i class="fa-solid fa-square-check"></i> Resultado</label>
+          <textarea id="json-output" readonly placeholder="El resultado aparecerá formateado aquí..." spellcheck="false"></textarea>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="btn-group">
+          <button id="btn-format" class="btn btn-primary"><i class="fa-solid fa-align-left"></i> Formatear</button>
+          <button id="btn-minify" class="btn btn-secondary"><i class="fa-solid fa-compress"></i> Minificar</button>
+          <button id="btn-copy-json" class="btn btn-outline"><i class="fa-solid fa-copy"></i> Copiar</button>
+        </div>
+        <button id="btn-clear-json" class="btn btn-ghost"><i class="fa-solid fa-trash-can"></i> Limpiar</button>
+      </div>
+
+      <div id="json-status" class="status-banner hidden"></div>
+    </article>
+
+    <!-- ESPACIO ADSENSE INTERMEDIO -->
+    <div class="ad-wrapper">
+      <div class="ad-box">
+        <span class="ad-label">Publicidad</span>
+        <!-- Código de Google AdSense aquí -->
+      </div>
     </div>
 
     <!-- HERRAMIENTA 2: CONTADOR DE TEXTO -->
-    <section class="tool-card">
-      <h2>📝 Contador de Texto, Palabras y Líneas</h2>
-      <p>Escribe o pega cualquier texto para obtener métricas en tiempo real.</p>
-
-      <textarea id="text-input" placeholder="Escribe o pega tu texto aquí..."></textarea>
-
-      <div class="stats-grid">
-        <div class="stat-box">
-          <span id="stat-words">0</span>
-          <small>Palabras</small>
-        </div>
-        <div class="stat-box">
-          <span id="stat-chars">0</span>
-          <small>Caracteres</small>
-        </div>
-        <div class="stat-box">
-          <span id="stat-lines">0</span>
-          <small>Líneas</small>
+    <article id="text-tool" class="card-tool">
+      <div class="card-header">
+        <div class="card-title">
+          <i class="fa-solid fa-file-lines icon-purple"></i>
+          <div>
+            <h3>Contador de Texto & Métricas</h3>
+            <p>Análisis en tiempo real de palabras, caracteres, líneas y tiempo de lectura estimativo.</p>
+          </div>
         </div>
       </div>
-    </section>
+
+      <textarea id="text-input" class="single-editor" placeholder="Pega o escribe tu texto aquí para analizar la densidad y estructura..." spellcheck="false"></textarea>
+
+      <div class="stats-dashboard">
+        <div class="metric-card">
+          <i class="fa-solid fa-font"></i>
+          <div>
+            <span id="stat-words" class="metric-value">0</span>
+            <span class="metric-label">Palabras</span>
+          </div>
+        </div>
+        <div class="metric-card">
+          <i class="fa-solid fa-text-height"></i>
+          <div>
+            <span id="stat-chars" class="metric-value">0</span>
+            <span class="metric-label">Caracteres</span>
+          </div>
+        </div>
+        <div class="metric-card">
+          <i class="fa-solid fa-list-ol"></i>
+          <div>
+            <span id="stat-lines" class="metric-value">0</span>
+            <span class="metric-label">Líneas</span>
+          </div>
+        </div>
+        <div class="metric-card">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <span id="stat-time" class="metric-value">0m</span>
+            <span class="metric-label">Tiempo Lectura</span>
+          </div>
+        </div>
+      </div>
+    </article>
 
     <!-- HERRAMIENTA 3: CONVERSOR DE BASES -->
-    <section class="tool-card">
-      <h2>🔢 Conversor de Bases Numéricas</h2>
-      <p>Ingresa un número en cualquier base para convertirlo automáticamente a las demás.</p>
-
-      <div class="converter-grid">
-        <div class="input-group">
-          <label for="base-dec">Decimal (Base 10):</label>
-          <input type="text" id="base-dec" placeholder="Ej. 255">
-        </div>
-
-        <div class="input-group">
-          <label for="base-bin">Binario (Base 2):</label>
-          <input type="text" id="base-bin" placeholder="Ej. 11111111">
-        </div>
-
-        <div class="input-group">
-          <label for="base-hex">Hexadecimal (Base 16):</label>
-          <input type="text" id="base-hex" placeholder="Ej. FF">
-        </div>
-
-        <div class="input-group">
-          <label for="base-oct">Octal (Base 8):</label>
-          <input type="text" id="base-oct" placeholder="Ej. 377">
+    <article id="base-tool" class="card-tool">
+      <div class="card-header">
+        <div class="card-title">
+          <i class="fa-solid fa-calculator icon-emerald"></i>
+          <div>
+            <h3>Conversor de Bases Numéricas</h3>
+            <p>Conversión instantánea bidireccional entre sistemas Decimal, Binario, Hexadecimal y Octal.</p>
+          </div>
         </div>
       </div>
 
-      <div id="base-status" class="status-msg"></div>
-      <button id="btn-clear-bases" class="btn btn-secondary">Limpiar Bases</button>
-    </section>
+      <div class="inputs-grid">
+        <div class="field-box">
+          <label for="base-dec">Decimal (Base 10)</label>
+          <div class="input-wrapper">
+            <span class="base-badge">DEC</span>
+            <input type="text" id="base-dec" placeholder="Ej. 255" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="field-box">
+          <label for="base-bin">Binario (Base 2)</label>
+          <div class="input-wrapper">
+            <span class="base-badge">BIN</span>
+            <input type="text" id="base-bin" placeholder="Ej. 11111111" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="field-box">
+          <label for="base-hex">Hexadecimal (Base 16)</label>
+          <div class="input-wrapper">
+            <span class="base-badge">HEX</span>
+            <input type="text" id="base-hex" placeholder="Ej. FF" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="field-box">
+          <label for="base-oct">Octal (Base 8)</label>
+          <div class="input-wrapper">
+            <span class="base-badge">OCT</span>
+            <input type="text" id="base-oct" placeholder="Ej. 377" autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <div class="toolbar border-top">
+        <div id="base-status" class="status-inline"></div>
+        <button id="btn-clear-bases" class="btn btn-ghost"><i class="fa-solid fa-rotate-left"></i> Restablecer</button>
+      </div>
+    </article>
 
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 DevToolLab - Herramientas Web Gratuitas.</p>
+    <div class="container footer-content">
+      <p>&copy; 2026 <strong>DevToolLab</strong>. Desarrollado para procesamiento local seguro.</p>
+      <div class="footer-links">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+        <a href="#">Contacto</a>
+      </div>
     </div>
   </footer>
 
