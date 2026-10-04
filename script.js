@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. HERRAMIENTA JSON
+  // 1. JSON TOOL
   const jsonInput = document.getElementById('json-input');
   const jsonOutput = document.getElementById('json-output');
   const jsonStatus = document.getElementById('json-status');
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     jsonStatus.classList.remove('hidden');
   }
 
-  // 2. CONTADOR DE TEXTO Y MÉTRICAS
+  // 2. TEXT COUNTER
   const textInput = document.getElementById('text-input');
   const statWords = document.getElementById('stat-words');
   const statChars = document.getElementById('stat-chars');
@@ -70,13 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
     statWords.textContent = wordCount;
 
     statLines.textContent = val === '' ? 0 : val.split('\n').length;
-
-    // Estimación de lectura (200 palabras por minuto)
     const minutes = Math.ceil(wordCount / 200);
     statTime.textContent = `${wordCount === 0 ? 0 : minutes}m`;
   });
 
-  // 3. CONVERSOR DE BASES NUMÉRICAS
+  // 3. BASE CONVERTER
   const inputDec = document.getElementById('base-dec');
   const inputBin = document.getElementById('base-bin');
   const inputHex = document.getElementById('base-hex');
